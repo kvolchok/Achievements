@@ -1,0 +1,188 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6252632549182426977
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -7254079575845848934, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -5143309505098769373, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: _rewardValue
+      value: 
+      objectReference: {fileID: 6408196989616315914}
+    - target: {fileID: 1021100063976471638, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_text
+      value: Collect Golds
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064319115625, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064319115627, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_text
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064489248644, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_Name
+      value: Icon
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064489248646, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: c249affb68c10448491cf5f21db84c12, type: 3}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_RootOrder
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 1500
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243980, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064579243981, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_Name
+      value: Achievement
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064885766522, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ffe128a5f047f43d9a494e099634504e, type: 3}
+    - target: {fileID: 1021100064885766523, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064885766523, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 80
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100064885766523, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100065326514749, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100065326514751, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100065326514751, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100065326514751, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100065326514751, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Claim
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100065326514751, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AchievementView, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100065326514751, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1021100065489600576, guid: de2da98916f194ae499cd00af4719422, type: 3}
+      propertyPath: m_text
+      value: Collect 10,000 Golds
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: de2da98916f194ae499cd00af4719422, type: 3}
+--- !u!114 &6408196989616315914 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1021100064319115627, guid: de2da98916f194ae499cd00af4719422, type: 3}
+  m_PrefabInstance: {fileID: 6252632549182426977}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

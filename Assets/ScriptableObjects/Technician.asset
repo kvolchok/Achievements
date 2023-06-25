@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c5c6b4bcc22d49c7ad7ae38670a4e58, type: 3}
+  m_Name: Technician
+  m_EditorClassIdentifier: 
+  <Type>k__BackingField: 2
+  <Name>k__BackingField: Technician
+  <Description>k__BackingField: Use skills 6 times
+  <Icon>k__BackingField: {fileID: 21300000, guid: 180dd459b1f2e41e7b1c59cbb67e45bb, type: 3}
+  <Reward>k__BackingField: {fileID: 21300000, guid: 79b47bb526f2f407ea5a899bf93524fc, type: 3}
+  <RewardValue>k__BackingField: 1
