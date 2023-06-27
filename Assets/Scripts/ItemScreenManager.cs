@@ -1,7 +1,7 @@
 using System.Linq;
 using UnityEngine;
 
-public class ItemManager : MonoBehaviour
+public class ItemScreenManager : MonoBehaviour
 {
     [SerializeField]
     private ItemModel[] _itemModels;

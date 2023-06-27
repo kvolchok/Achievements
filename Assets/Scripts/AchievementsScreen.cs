@@ -16,7 +16,7 @@ public class AchievementsScreen : MonoBehaviour
     [SerializeField]
     private WalletView _walletView;
     [SerializeField]
-    private ItemManager _itemManager;
+    private ItemScreenManager _itemScreenManager;
 
     private void Awake()
     {
@@ -51,7 +51,7 @@ public class AchievementsScreen : MonoBehaviour
             {
                 var achievement = Instantiate(_achievementTypeItemPrefab, _achievementRoot);
                 achievement.Initialize(achievementModel,
-                    () => _itemManager.AddItem(achievementModel.RewardValue));
+                    () => _itemScreenManager.AddItem(achievementModel.RewardValue));
                 break;
             }
         }
