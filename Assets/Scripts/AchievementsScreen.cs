@@ -23,35 +23,35 @@ public class AchievementsScreen : MonoBehaviour
         _walletView.Initialize(_wallet);
         
         var settings = _settings.GetSettings();
-        foreach (var achievementModel in settings)
+        foreach (var model in settings)
         {
-            CreateAchievement(achievementModel);
+            CreateAchievement(model);
         }
     }
 
-    private void CreateAchievement(AchievementModel achievementModel)
+    private void CreateAchievement(AchievementModel model)
     {
-        switch (achievementModel.Type)
+        switch (model.Type)
         {
             case AchievementType.Gold:
             {
                 var achievement = Instantiate(_achievementPrefab, _achievementRoot);
-                achievement.Initialize(achievementModel,
-                    () => _wallet.AddGoldScore(achievement, achievementModel.RewardValue));
+                achievement.Initialize(model,
+                    () => _wallet.AddGoldScore(achievement, model.RewardValue));
                 break;
             }
             case AchievementType.Gem:
             {
                 var achievement = Instantiate(_achievementPrefab, _achievementRoot);
-                achievement.Initialize(achievementModel,
-                    () => _wallet.AddGemScore(achievement, achievementModel.RewardValue));
+                achievement.Initialize(model,
+                    () => _wallet.AddGemScore(achievement, model.RewardValue));
                 break;
             }
             case AchievementType.Item:
             {
                 var achievement = Instantiate(_achievementTypeItemPrefab, _achievementRoot);
-                achievement.Initialize(achievementModel,
-                    () => _itemScreenManager.AddItem(achievementModel.RewardValue));
+                achievement.Initialize(model,
+                    () => _itemScreenManager.AddItem(model.RewardValue));
                 break;
             }
         }

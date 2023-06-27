@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class AchievementView : MonoBehaviour
 {
-    private Action _claimRewardEvent;
+    private Action _onRewardClaimed;
 
     private static readonly int IsClaimed = Animator.StringToHash("Is Claimed");
 
@@ -27,7 +27,7 @@ public class AchievementView : MonoBehaviour
     private Animator _animator;
     private bool _isClaimed;
 
-    public void Initialize(AchievementModel achievementModel, Action claimRewardEvent)
+    public void Initialize(AchievementModel achievementModel, Action onRewardClaimed)
     {
         _name.text = achievementModel.Name;
         _description.text = achievementModel.Description;
@@ -36,7 +36,7 @@ public class AchievementView : MonoBehaviour
         _rewardValue.text = achievementModel.RewardValue.ToString();
         
         Type = achievementModel.Type;
-        _claimRewardEvent = claimRewardEvent;
+        _onRewardClaimed = onRewardClaimed;
 
         _animator = GetComponent<Animator>();
     }
@@ -45,7 +45,7 @@ public class AchievementView : MonoBehaviour
     public void Claim()
     {
         ChangeState(_isClaimed);
-        _claimRewardEvent?.Invoke();
+        _onRewardClaimed?.Invoke();
     }
 
     private void ChangeState(bool newState)
