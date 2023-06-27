@@ -278,7 +278,7 @@ GameObject:
   - component: {fileID: 264686530}
   - component: {fileID: 264686529}
   m_Layer: 5
-  m_Name: GemValue
+  m_Name: GemScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -683,7 +683,7 @@ GameObject:
   - component: {fileID: 348390957}
   - component: {fileID: 348390956}
   m_Layer: 5
-  m_Name: GoldWalletView
+  m_Name: GoldWallet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -998,8 +998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f2d8dd6679447f2ae6a842c734f7640, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _goldValueLabel: {fileID: 1128943693}
-  _gemValueLabel: {fileID: 264686529}
+  _goldScoreLabel: {fileID: 1128943693}
+  _gemScoreLabel: {fileID: 264686529}
   _moneyTypePrefabs:
   - {fileID: 11400000, guid: 1f76fa2726acb4ac9b8b5b7a005a6dd1, type: 2}
   - {fileID: 11400000, guid: cdf5281fb2c0742cfba8e9c4ec787033, type: 2}
@@ -1185,7 +1185,7 @@ GameObject:
   - component: {fileID: 1099104640}
   - component: {fileID: 1099104639}
   m_Layer: 5
-  m_Name: GemWalletView
+  m_Name: GemWallet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1263,7 +1263,7 @@ GameObject:
   - component: {fileID: 1128943694}
   - component: {fileID: 1128943693}
   m_Layer: 5
-  m_Name: GoldValue
+  m_Name: GoldScore
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

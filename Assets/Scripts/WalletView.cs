@@ -6,9 +6,9 @@ using UnityEngine;
 public class WalletView : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshProUGUI _goldValueLabel;
+    private TextMeshProUGUI _goldScoreLabel;
     [SerializeField]
-    private TextMeshProUGUI _gemValueLabel;
+    private TextMeshProUGUI _gemScoreLabel;
     
     [SerializeField]
     private MoneyTypePrefab[] _moneyTypePrefabs;
@@ -35,8 +35,8 @@ public class WalletView : MonoBehaviour
     {
         _wallet = wallet;
         
-        SetScore(_goldValueLabel, _wallet.GoldScore);
-        SetScore(_gemValueLabel, _wallet.GemScore);
+        SetScore(_goldScoreLabel, _wallet.GoldScore);
+        SetScore(_gemScoreLabel, _wallet.GemScore);
         
         _wallet.OnScoreChanged += OnScoreChanged;
     }
@@ -54,13 +54,13 @@ public class WalletView : MonoBehaviour
                 var moneyPrefab = _moneyTypePrefabs.First(moneyPrefab => moneyPrefab.Type == AchievementType.Gold);
                 StartCoroutine(ShowItemMovementAnimation(moneyPrefab,
                     achievement.RewardRoot.position, _goldViewRoot.position));
-                StartCoroutine(ShowMoneyCalculationAnimation(_goldValueLabel, oldScore, newScore));
+                StartCoroutine(ShowMoneyCalculationAnimation(_goldScoreLabel, oldScore, newScore));
                 break;
             case AchievementType.Gem:
                 moneyPrefab = _moneyTypePrefabs.First(moneyPrefab => moneyPrefab.Type == AchievementType.Gem);
                 StartCoroutine(ShowItemMovementAnimation(moneyPrefab,
                     achievement.RewardRoot.position, _gemViewRoot.position));
-                StartCoroutine(ShowMoneyCalculationAnimation(_gemValueLabel, oldScore, newScore));
+                StartCoroutine(ShowMoneyCalculationAnimation(_gemScoreLabel, oldScore, newScore));
                 break;
         }
     }
@@ -96,7 +96,7 @@ public class WalletView : MonoBehaviour
         Destroy(itemPrefab.gameObject);
     }
 
-    private IEnumerator ShowMoneyCalculationAnimation(TextMeshProUGUI valueLabel, int oldScore, int newScore)
+    private IEnumerator ShowMoneyCalculationAnimation(TextMeshProUGUI scoreLabel, int oldScore, int newScore)
     {
         var currentTime = 0f;
 
@@ -105,12 +105,12 @@ public class WalletView : MonoBehaviour
             var progress = currentTime / _moneyCalculationTime;
             var currentScore = (int)Mathf.Lerp(oldScore, newScore, progress);
             currentTime += Time.deltaTime;
-            SetScore(valueLabel, currentScore);
+            SetScore(scoreLabel, currentScore);
 
             yield return null;
         }
         
-        SetScore(valueLabel, newScore);
+        SetScore(scoreLabel, newScore);
     }
 
     private void OnDestroy()
