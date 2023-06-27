@@ -9,8 +9,6 @@ public class ItemManager : MonoBehaviour
     [SerializeField]
     private ItemScreen _itemScreenPrefab;
 
-    private ItemScreen _itemScreen;
-
     public void AddItem(int id)
     {
         var itemModel = _itemModels.First(model => model.Id == id);
@@ -19,12 +17,7 @@ public class ItemManager : MonoBehaviour
 
     private void ShowScreen(ItemModel itemModel)
     {
-        _itemScreen = Instantiate(_itemScreenPrefab, transform);
-        _itemScreen.Initialize(itemModel, CloseScreen);
-    }
-
-    private void CloseScreen()
-    {
-        Destroy(_itemScreen.gameObject);
+        var itemScreen = Instantiate(_itemScreenPrefab, transform);
+        itemScreen.Initialize(itemModel);
     }
 }

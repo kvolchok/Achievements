@@ -1,4 +1,3 @@
-using System;
 using JetBrains.Annotations;
 using TMPro;
 using UnityEngine;
@@ -6,8 +5,6 @@ using UnityEngine.UI;
 
 public class ItemScreen : MonoBehaviour
 {
-    private Action _closeScreenEvent;
-    
     private static readonly int IsActive = Animator.StringToHash("Is Active");
     
     [SerializeField]
@@ -20,13 +17,12 @@ public class ItemScreen : MonoBehaviour
     private Animator _animator;
     private bool _isActive;
 
-    public void Initialize(ItemModel itemModel, Action closeScreenEvent)
+    public void Initialize(ItemModel itemModel)
     {
         _description.text = itemModel.Description;
         _name.text = itemModel.Name;
         _icon.sprite = itemModel.Icon;
-
-        _closeScreenEvent = closeScreenEvent;
+        
         _animator = GetComponentInChildren<Animator>();
         
         ChangeState(_isActive);
@@ -35,7 +31,7 @@ public class ItemScreen : MonoBehaviour
     [UsedImplicitly]
     public void CloseScreen()
     {
-        _closeScreenEvent?.Invoke();
+        Destroy(gameObject);
     }
 
     private void ChangeState(bool newState)
