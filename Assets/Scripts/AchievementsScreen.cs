@@ -12,15 +12,15 @@ public class AchievementsScreen : MonoBehaviour
     private RectTransform _achievementRoot;
 
     [SerializeField]
-    private WalletManager _walletManager;
-    [SerializeField]
     private WalletView _walletView;
+    [SerializeField]
+    private Wallet _wallet;
     [SerializeField]
     private ItemScreenManager _itemScreenManager;
 
     private void Awake()
     {
-        _walletManager.Initialize(_walletView.AddScore);
+        _walletView.Initialize(_wallet);
         
         var settings = _settings.GetSettings();
         foreach (var achievementModel in settings)
@@ -37,14 +37,14 @@ public class AchievementsScreen : MonoBehaviour
             {
                 var achievement = Instantiate(_achievementPrefab, _achievementRoot);
                 achievement.Initialize(achievementModel,
-                    () => _walletManager.AddGoldScore(achievement, achievementModel.RewardValue));
+                    () => _wallet.AddGoldScore(achievement, achievementModel.RewardValue));
                 break;
             }
             case AchievementType.Gem:
             {
                 var achievement = Instantiate(_achievementPrefab, _achievementRoot);
                 achievement.Initialize(achievementModel,
-                    () => _walletManager.AddGemScore(achievement, achievementModel.RewardValue));
+                    () => _wallet.AddGemScore(achievement, achievementModel.RewardValue));
                 break;
             }
             case AchievementType.Item:

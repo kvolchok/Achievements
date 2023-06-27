@@ -28,14 +28,25 @@ public class WalletView : MonoBehaviour
     private float _itemSpawnDelay;
     [SerializeField]
     private float _moneyCalculationTime;
+    
+    private Wallet _wallet;
 
-    public void SetStartScore(int goldValue, int gemValue)
+    public void Initialize(Wallet wallet)
     {
-        SetScore(_goldValueLabel, goldValue);
-        SetScore(_gemValueLabel, gemValue);
+        _wallet = wallet;
+        
+        SetScore(_goldValueLabel, _wallet.GoldScore);
+        SetScore(_gemValueLabel, _wallet.GemScore);
+        
+        _wallet.OnScoreChanged += OnScoreChanged;
+    }
+    
+    private void SetScore(TextMeshProUGUI scoreLabel, int score)
+    {
+        scoreLabel.text = score.ToString();
     }
 
-    public void AddScore(AchievementView achievement, int startMoneyScore, int delta)
+    private void OnScoreChanged(AchievementView achievement, int oldScore, int newScore)
     {
         switch (achievement.Type)
         {
@@ -43,27 +54,22 @@ public class WalletView : MonoBehaviour
                 var moneyPrefab = _moneyTypePrefabs.First(moneyPrefab => moneyPrefab.Type == AchievementType.Gold);
                 StartCoroutine(ShowItemMovementAnimation(moneyPrefab,
                     achievement.RewardRoot.position, _goldViewRoot.position));
-                StartCoroutine(ShowMoneyCalculationAnimation(_goldValueLabel, startMoneyScore, delta));
+                StartCoroutine(ShowMoneyCalculationAnimation(_goldValueLabel, oldScore, newScore));
                 break;
             case AchievementType.Gem:
                 moneyPrefab = _moneyTypePrefabs.First(moneyPrefab => moneyPrefab.Type == AchievementType.Gem);
                 StartCoroutine(ShowItemMovementAnimation(moneyPrefab,
                     achievement.RewardRoot.position, _gemViewRoot.position));
-                StartCoroutine(ShowMoneyCalculationAnimation(_gemValueLabel, startMoneyScore, delta));
+                StartCoroutine(ShowMoneyCalculationAnimation(_gemValueLabel, oldScore, newScore));
                 break;
         }
     }
 
-    private void SetScore(TextMeshProUGUI moneyValueLabel, int moneyScore)
-    {
-        moneyValueLabel.text = moneyScore.ToString();
-    }
-
-    private IEnumerator ShowItemMovementAnimation(MoneyTypePrefab moneyTypePrefab, Vector3 fromPosition, Vector3 toPosition)
+    private IEnumerator ShowItemMovementAnimation(MoneyTypePrefab moneyPrefab, Vector3 fromPosition, Vector3 toPosition)
     {
         for (var i = 0; i < _itemsCount; i++)
         {
-            var item = Instantiate(moneyTypePrefab.Prefab, _canvasRoot);
+            var item = Instantiate(moneyPrefab.Prefab, _canvasRoot);
             item.transform.position = fromPosition;
             
             StartCoroutine(MoveItemTo(item, toPosition));
@@ -90,21 +96,25 @@ public class WalletView : MonoBehaviour
         Destroy(itemPrefab.gameObject);
     }
 
-    private IEnumerator ShowMoneyCalculationAnimation(TextMeshProUGUI moneyValueLabel, int startMoneyScore, int delta)
+    private IEnumerator ShowMoneyCalculationAnimation(TextMeshProUGUI valueLabel, int oldScore, int newScore)
     {
-        var newMoneyScore = startMoneyScore + delta;
         var currentTime = 0f;
 
         while (currentTime <= _moneyCalculationTime)
         {
             var progress = currentTime / _moneyCalculationTime;
-            var currentScore = (int)Mathf.Lerp(startMoneyScore, newMoneyScore, progress);
+            var currentScore = (int)Mathf.Lerp(oldScore, newScore, progress);
             currentTime += Time.deltaTime;
-            SetScore(moneyValueLabel, currentScore);
+            SetScore(valueLabel, currentScore);
 
             yield return null;
         }
         
-        SetScore(moneyValueLabel, newMoneyScore);
+        SetScore(valueLabel, newScore);
+    }
+
+    private void OnDestroy()
+    {
+        _wallet.OnScoreChanged -= OnScoreChanged;
     }
 }

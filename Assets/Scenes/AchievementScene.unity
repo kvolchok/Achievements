@@ -263,9 +263,9 @@ MonoBehaviour:
   _achievementPrefab: {fileID: 7951838987208020802, guid: c3b29bbfcb3f048efacf71545962d8e1, type: 3}
   _achievementTypeItemPrefab: {fileID: -5143309505098769373, guid: de2da98916f194ae499cd00af4719422, type: 3}
   _achievementRoot: {fileID: 2023974374}
-  _walletManager: {fileID: 876593817}
   _walletView: {fileID: 876593816}
-  _itemManager: {fileID: 110175863}
+  _wallet: {fileID: 876593817}
+  _itemScreenManager: {fileID: 110175863}
 --- !u!1 &264686527
 GameObject:
   m_ObjectHideFlags: 0
@@ -1022,23 +1022,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d486e6737154f34be16affa81a00d4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _setStartScoreEvent:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 876593816}
-        m_TargetAssemblyTypeName: WalletView, Assembly-CSharp
-        m_MethodName: SetStartScore
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _goldScore: 100
-  _gemScore: 10
+  <GoldScore>k__BackingField: 100
+  <GemScore>k__BackingField: 10
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
